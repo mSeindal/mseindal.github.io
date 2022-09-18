@@ -1,0 +1,23 @@
+.page_header
+{
+    width: 100%;
+    /* background-color: aquamarine; */
+}
+
+.header_content
+{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 1.5em;
+    /* text-transform: uppercase; */
+    font-weight: lighter;
+}
+
+.header_content_left
+{
+    display: flex;
+    flex-wrap: wrap;
+}
