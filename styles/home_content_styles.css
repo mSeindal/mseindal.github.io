@@ -165,24 +165,3 @@ img
     font-size: 16px;
     font-weight: lighter;
 }
-
-
-
-
-.home_hobbies
-{
-    margin-top: 0px;
-    background-color: #EDE6DB;
-    color: #1D5C63;
-    /* display: flex; */
-    padding-bottom: 40px;
-}
-
-.hobbies_header
-{
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
-}
