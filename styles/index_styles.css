@@ -10,3 +10,25 @@ body
     flex-direction: column;
     background-color: #EDE6DB;
 }
+
+::-webkit-scrollbar
+{
+    /* display: none; */
+    border-radius: 8px;
+    width: 5px;
+    padding-right: 10px;
+    background-color:#00000000;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: rgb(190, 190, 190);
+    border-radius: 10px;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-track
+{
+    background: rgba(255, 255, 255, 0);
+    width: 100px;
+}

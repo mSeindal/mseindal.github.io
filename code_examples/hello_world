@@ -1,0 +1,50 @@
+def ism(fs, n, alpha, room, source, mic):
+    t1 = time.time()
+    beta = -np.abs(np.sqrt(1-alpha))
+
+    N = np.arange(-n, n, 1, dtype=float)
+
+    p = (((-1)**N) * (-1) + 1) * 0.5
+    Rp = np.array([source[0] - 2*p*source[0] - mic[0],
+                   source[1] - 2*p*source[1] - mic[1],
+                   source[2] - 2*p*source[2] - mic[2]])
+
+
+    m = (N + 0.5 - 0.5 * ((-1)**N)) * 0.5
+    Rm = np.array([2*m*room[0],
+                   2*m*room[1],
+                   2*m*room[2]])
+
+    Rpm = Rp + Rm
+
+    [i, j, k] = np.meshgrid(Rpm[0,:], Rpm[1,:], Rpm[2,:])
+
+    dist = np.sqrt(i**2 + j**2 + k**2)
+
+    [mx, my, mz] = np.meshgrid(m, m, m)
+    [px, py, pz] = np.meshgrid(p, p, p)
+
+    beta_cal = (beta[0]**(np.abs(mx-px))) * (beta[1]**(np.abs(mx))) * \
+               (beta[2]**(np.abs(my-py))) * (beta[3]**(np.abs(my))) * \
+               (beta[4]**(np.abs(mz-pz))) * (beta[5]**(np.abs(mz)))
+
+    e = beta_cal/(4 * np.pi * dist)
+
+    t= np.round(fs*dist/343)
+
+    J = t.reshape(-1).astype(int).tolist() # lav til int array list?
+    I = np.ones(len(J)).astype(int).tolist()
+    SV = e.reshape(-1)
+
+    rir = scipy.sparse.csr_matrix((SV, (I, J)), dtype=np.float)
+    rir.eliminate_zeros()
+    rir = rir.todense()
+    rir = rir[1,0:-1]
+    rir = np.transpose(rir)
+    rir = np.ravel(rir)
+    rir_normalized = rir/(np.max(np.abs(rir)))
+
+    print(time.time() - t1)
+
+    return rir_normalized
+    # conv_sig = np.convolve(np.ravel(sig), np.ravel(rir_normalized), 'same')
