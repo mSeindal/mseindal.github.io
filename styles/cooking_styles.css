@@ -1,31 +1,33 @@
 .dish_main
 {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 20px;
-    margin-right: 20px;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
+.dish_content
+{
+  display: flex;
+  flex-wrap: wrap;
+  width: 1450px;
+  margin-top: 40px;
+  min-height: 100% !important;
+}
 
 .dish_gallery{
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
     border-radius: 20px;
 }
 
-.dish_gallery img{
-    border-radius: 20px;
-}
-
 .dish_gallery:hover {
-  border: 2px solid #417D7A;
+  transform: scale(1.03);
+  border: 1px solid #417D7A;
 }
 
 .dish_gallery img {
   width: 100%;
   height: auto;
+  border-radius: 19px;
 }
 
 div.dish_description {
@@ -38,8 +40,7 @@ div.dish_description {
 }
 
 .dish_responsive {
-  padding: 6px;
-  float: left;
+  padding: 20px;
   width: 33.33333%;
 }
 

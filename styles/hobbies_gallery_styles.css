@@ -19,15 +19,18 @@
 
 .hobbies_gallery {
   border: 1px solid #ccc;
+  border-radius: 20px;
 }
 
 .hobbies_gallery:hover {
-  border: 1px solid #777;
+  transform: scale(1.03);
+  border: 1px solid #417D7A;
 }
 
 .hobbies_gallery img {
   width: 100%;
   height: auto;
+  border-radius: 19px;
 }
 
 div.desc {
@@ -40,7 +43,7 @@ div.desc {
 }
 
 .hobbies_responsive {
-  padding: 6px;
+  padding: 20px;
   float: left;
   width: 24.99999%;
 }
