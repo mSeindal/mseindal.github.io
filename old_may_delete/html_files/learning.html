@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/index_styles.css">
+    <link rel="stylesheet" href="/styles/learning_page_style.css">
+    <title>Learning</title>
+</head>
+
+
+<body>
+
+    <div w3-include-html="/html_files/homepage_header.html"></div>
+
+    <div class="learning_page">
+        <div class="learning_page_content">
+            <div class="code_content">
+                <h2>Image Source Model</h2>
+                <div class="code_block">
+                    <pre class="my_code", w3-include-html="/code_examples/ism_code"></pre>
+                </div>
+            </div>
+
+            <div class="code_content">
+                <h2>Octave Band Analyzer</h2>
+                <div class="code_block">
+                    <pre class="my_code", w3-include-html="/code_examples/octave_band_analyzer"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+<script src="/js_scripts/include_html.js"></script>
+<!-- <scrip scr="/js_scripts/open_close_side_menu.js"></script> -->
+<script>
+    includeHTML();
+    function open_side_menu()
+    {
+      document.getElementById('side-menu').style.width = '250px';
+    //   document.getElementById('main').style.marginLeft = '250px';
+    }
+
+    function close_side_menu()
+    {
+      document.getElementById('side-menu').style.width = '0';
+    //   document.getElementById('main').style.marginLeft = '0';
+    }
+</script>
+
+
+</html>
